@@ -17,10 +17,11 @@ RUN mkdir /usr/local/artify && \
 	tar -xvf artify.tar.gz -C usr/local/artify/ &&\
         chmod +x usr/local/artify/artify
 
+COPY ressources/  /
 
-VOLUME /media
-ENTRYPOINT ["/usr/local/artify/artify"]
-
+#CMD ["find", "*" ,".", "-maxdepth", "2"]
+ENTRYPOINT ["/usr/local/artify/artify","--device","/cpu:0"]
+CMD ["--content_img","lion.jpg", "--style_imgs","the_scream.jpg", "--style_imgs_dir", "files", "--content_img_dir","files", "--verbose"]
 
 
 
