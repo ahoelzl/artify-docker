@@ -1,6 +1,5 @@
 FROM ubuntu:16.04
 
-LABEL authors="Andreas Hoelzl <ahoelzl23@gmail.com>"
 
 RUN apt-get update
 RUN apt-get install -y qtdeclarative5-dev
